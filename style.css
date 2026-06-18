@@ -1,0 +1,97 @@
+/* Custom Premium Styles and 3D Mechanics */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-main);
+    transition: background-color 0.8s cubic-bezier(0.16, 1, 0.3, 1), color 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow-x: hidden;
+}
+
+/* 3D Perspective Setup */
+.perspective-container {
+    perspective: 1200px;
+}
+
+.tilt-card {
+    transform-style: preserve-3d;
+    transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+    will-change: transform;
+}
+
+/* Preserve 3D depth for child elements */
+.preserve-3d {
+    transform-style: preserve-3d;
+}
+
+.translate-z-10 { transform: translateZ(10px); }
+.translate-z-20 { transform: translateZ(20px); }
+.translate-z-30 { transform: translateZ(30px); }
+.translate-z-40 { transform: translateZ(40px); }
+.translate-z-50 { transform: translateZ(50px); }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(156, 163, 175, 0.25);
+    border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(156, 163, 175, 0.45);
+}
+
+/* Ambient slider track styling */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: rgba(156, 163, 175, 0.15);
+    height: 4px;
+    border-radius: 99px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -6px;
+    background-color: currentColor;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    transition: transform 0.1s ease;
+}
+
+input[type="range"]:active::-webkit-slider-thumb {
+    transform: scale(1.3);
+}
+
+/* Smooth tab highlight bar transitions */
+.tab-indicator {
+    transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1), width 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease;
+}
+
+/* Elastic springy animations */
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.92); }
+    100% { transform: scale(1); }
+}
+
+.animate-pop {
+    animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Soft premium glow for focus states */
+.focus-glow-orange { box-shadow: 0 20px 50px -12px rgba(226, 92, 61, 0.15); }
+.focus-glow-green { box-shadow: 0 20px 50px -12px rgba(90, 138, 119, 0.15); }
+.focus-glow-blue { box-shadow: 0 20px 50px -12px rgba(79, 112, 156, 0.15); }
